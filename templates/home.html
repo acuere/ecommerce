@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   {% for product in product_list %}
+            <div class="prod_box">
+                <div class="top_prod_box"></div>
+                <div class="center_prod_box">
+                    <div class="product_title"><a href="{% url 'product_detail' product.pk %}"> {{ product.name }} </a></div>
+                    <div class="product_img"><a  href="{% url 'product_detail' product.pk %}"><img src="media/{{ product.picture }}" style="width:100px; height:120px;" alt="" border="0"/></a>
+                    </div>
+                    <div class="prod_price"><span class="price">{{ product.price }}</span></div>
+                </div>
+                <div class="bottom_prod_box"></div>
+                <div class="prod_details_tab"><a href="#" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img
+                        src="media/images/cart.gif" alt="" border="0" class="left_bt"/></a> <a href="#"
+                                                                                         title="header=[Specials] body=[&nbsp;] fade=[on]"><img
+                        src="media/images/favs.gif" alt="" border="0"
+                        class="left_bt"/></a>  <a href="{% url 'product_detail' product.pk %}"
+                                                                                              class="prod_details">details</a>
+                </div>
+            </div>
+            {% endfor %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+{% for product in product_list %}
+                <div class="prod_box">
+                    <div class="top_prod_box"></div>
+                    <div class="center_prod_box">
+                        <div class="product_title"><a href="{% url 'product_detail' %}">{{ product.name }}</a></div>
+                        <div class="product_img"><a href="{% url 'product_detail' %}"><img src="media/{{ product.picture }}" style="width:100px;height:120px;" alt=""
+                                                                                     border="0"/></a>
+                        </div>
+                        <div class="prod_price">
+            <span class="reduce">{{ product.reduced }}$</span>
+                                <span> class="price">{{ product.price }}$</span>
+                        </div>
+                    </div>
+                    <div class="bottom_prod_box"></div>
+                    <div class="prod_details_tab"><a href="#" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img
+                            src="" alt="" border="0" class="left_bt"/></a> <a href="{% url 'product_detail' %}"
+                                                                              class="prod_details">details</a>
+                    </div>
+                </div>
+            {% endfor %}
