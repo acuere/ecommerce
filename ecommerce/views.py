@@ -8,7 +8,7 @@ from .models import *
 
 # Create your views here.
 
-class TypeCreateProduct(TemplateView):
+class ProductListView(TemplateView):
 
     model = Type
     template_name = 'home.html'
