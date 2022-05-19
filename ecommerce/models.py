@@ -21,3 +21,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ContactUs(models.Model):
+    title = models.CharField(max_length=100)
+    fullname = models.CharField(max_length=100)
+    company = models.CharField(max_length=100,blank=True)
+    phone = models.CharField(max_length=30)
+    email = models.CharField(max_length=50)
+    summary = models.TextField()
+
+    def __str__(self):
+        return self.title

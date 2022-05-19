@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -59,7 +59,17 @@ class ProductEditView(UpdateView):
 class ProductDeleteViewBlog(DeleteView):
     model = Product
     template_name = 'product_delete.html'
-    success_url = reverse_lazy('home')
+    # success_url = '/'
     context_object_name = 'form'
 
+    def get_success_url(self):
+        return reverse('detail', kwargs={'slug': self.object.slug})
+
+
+
+class ContactUsView(CreateView):
+    model = ContactUs
+    template_name = 'contact.html'
+    success_url = '/'
+    fields = '__all__'
 

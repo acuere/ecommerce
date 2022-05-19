@@ -465,7 +465,7 @@ width:554px;height:12px;background:url(images/details_box_top.gif) no-repeat cen
 width:554px;height:12px;background:url(images/details_box_bottom.gif) no-repeat center top;float:left;padding:0px; margin:0px;
 }
 .center_prod_box_big{
-width:554px;height: auto;background:url(images/details_box_center.gif) repeat-y;float:left; text-align:center;padding:0px; margin:0px;
+width:554px;height: 500px;background:url(images/details_box_center.gif) repeat-y;float:left; text-align:center;padding:0px; margin:0px;
 }
 .product_img_big{
 width:170px;

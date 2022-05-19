@@ -9,4 +9,5 @@ urlpatterns = [
     path('edit/<int:pk>',ProductEditView.as_view(),name='product_edit'),
     path('delete/<int:pk>',ProductDeleteViewBlog.as_view(),name='product_delete'),
     path('add/',ProductAddView.as_view(),name='product_add'),
+    path('contact/',ContactUsView.as_view(),name='contact'),
 ]

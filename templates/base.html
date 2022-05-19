@@ -12,20 +12,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'iecss.css' %}"/>
     <![endif]-->
     <script type="text/javascript" src="{% static 'js/boxOver.js' %}"></script>
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Bootstrap CSS-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 
 <body>
 <div id="main_container">
     <div class="top_bar">
-        <div class="top_search">
-            <div class="search_text"><a href="">Search</a></div>
-            <input type="text" class="search_input" name="search"/>
-            <input type="image" src="{% static 'images/search.gif' %} " class="search_bt"/>
-        </div>
+<!--        <div class="top_search">-->
+<!--            <div class="search_text"><a href="">Search</a></div>-->
+<!--            <input type="text" name="search-text" placeholder="Seached text">-->
+<!--            <input type="number" name="from-price" placeholder="Price from">-->
+<!--            <input type="number" name="to-price" placeholder="Price to">-->
+<!--            <input type="image" src="{% static 'images/search.gif' %} " class="search_bt"/>-->
+<!--        </div>-->
         <div class="languages">
             <div class="lang_text">Languages:</div>
             <a href="#" class="lang"><img src=" {% static 'images/en.gif' %}" alt="" border="0"/></a> <a href="#" class="lang"><img
@@ -49,8 +51,7 @@
                         <a href="details.html" class="details">details</a>
                     </div>
                 </div>
-                <div class="oferta_pagination"><span class="current">1</span> <a href="#">2</a> <a href="#">3</a> <a
-                        href="#">4</a> <a href="#">5</a></div>
+
             </div>
             <div class="top_divider"><img src="{% static 'images/header_divider.png' %}" alt="" width="1" height="164"/></div>
         </div>
@@ -63,16 +64,10 @@
                 <li><a href="{% url 'home' %}" class="nav1"> Home</a></li>
                 <li class="divider"></li>
                 <li><a href="{% url 'home' %}" class="nav2">Products</a></li>
-                <li class="divider"></li>
-                <li><a href="#" class="nav3">Specials</a></li>
-                <li class="divider"></li>
                 <li><a href="#" class="nav4">My account</a></li>
                 <li class="divider"></li>
                 <li><a href="#" class="nav4">Sign Up</a></li>
-                <li class="divider"></li>
-                <li><a href="#" class="nav5">Shipping</a></li>
-                <li class="divider"></li>
-                <li><a href="contact.html" class="nav6">Contact Us</a></li>
+                <li><a href="{% url 'contact' %}" class="nav6">Contact Us</a></li>
                 <li class="divider"></li>
                 <li class="currencies">Currencies
                     <select>
@@ -80,11 +75,12 @@
                         <option>Euro</option>
                     </select>
                 </li>
+                <li><a href="{% url 'product_add' %}" class="btn btn-primary" role="button" class="nav4">Add Product</a></li>
+
             </ul>
             <div class="right_menu_corner"></div>
         </div>
         <!-- end of menu tab -->
-        <div class="crumb_navigation"> Navigation: <span class="current">Home</span></div>
         <div class="left_content">
             <div class="title_box">Categories</div>
             <ul class="left_menu">
@@ -111,17 +107,9 @@
         </div>
         <!-- end of left content -->
         <div class="center_content">
-            <div class="center_title_bar">Latest Products &nbsp;
-            <a href="{% url 'product_add' %}"> Add Product</a>
+            <div class="center_title_bar"><a href="{% url 'home' %}">Latest Products</a>  &nbsp;
             </div>
-        <div>
-    <form action="search" method="get">
-    <input type="text" name="search-text" placeholder="Seached text">
-    <input type="number" name="from-price" placeholder="Price from">
-    <input type="number" name="to-price" placeholder="Price to">
-    <input type="submit" value="Search">
-    </form>
-    </div>
+
 
         {% block content %}
         {% endblock content %}
@@ -129,14 +117,14 @@
         </div>
         <!-- end of center content -->
         <div class="right_content">
-            <div class="shopping_cart">
-                <div class="cart_title">Shopping cart</div>
-                <div class="cart_details"> 3 items <br/>
-                    <span class="border_cart"></span> Total: <span class="price">350$</span>
-                </div>
-                <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img
-                        src="{% static 'images/shoppingcart.png' %}" alt="" width="48" height="48" border="0"/></a></div>
-            </div>
+<!--            <div class="shopping_cart">-->
+<!--                <div class="cart_title">Shopping cart</div>-->
+<!--                <div class="cart_details"> 3 items <br/>-->
+<!--                    <span class="border_cart"></span> Total: <span class="price">350$</span>-->
+<!--                </div>-->
+<!--                <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img-->
+<!--                        src="{% static 'images/shoppingcart.png' %}" alt="" width="48" height="48" border="0"/></a></div>-->
+<!--            </div>-->
             <div class="title_box">What�s new</div>
             <div class="border_box">
                 <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
@@ -158,7 +146,7 @@
     <!-- end of main content -->
     <div class="footer">
         <div class="right_footer"><a href="#">home</a> <a href="#">about</a> <a href="#">sitemap</a> <a href="#">rss</a>
-            <a href="contact.html">contact us</a></div>
+            <a href="{% url 'contact' %}">contact us</a></div>
     </div>
 </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

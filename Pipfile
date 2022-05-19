@@ -8,6 +8,7 @@ django = "*"
 psycopg2-binary = "*"
 pillow = "*"
 django-crispy-forms = "*"
+trans = "*"
 
 [dev-packages]
 

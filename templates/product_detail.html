@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="center_title_bar">{{ product.name }}</div>
+<div class="center_title_bar">
+    <!--    {{ product.name }} -->
+    <h6><a href="{% url 'product_edit' product.id %}" class="btn btn-primary" role="button">✏️ Edit</a> &nbsp;&nbsp;<a
+            class="btn btn-primary" role="button" href="{% url 'product_delete' product.id %}" class="">🗑 Delete</a>
+    </h6>
+</div>
 <div class="prod_box_big">
     <div class="top_prod_box_big"></div>
     <div class="center_prod_box_big">
@@ -20,12 +25,11 @@
             </div>
             <div class="prod_price_big"><span class="reduce">{{ product.reduced }}</span> <span class="price">{{ product.price}}$</span>
             </div>
-            <a href="#" class="addtocart">add to cart</a> <a href="#" class="compare">compare</a></div>
-        <h2><a href="{% url 'product_edit' product.id %}" class="">✏️ Edit</a></h2>
-        <h2><a href="{% url 'product_delete' product.id %}" class="">🗑 Delete</a></div>
-    </h2>
+            <a href="#" class="addtocart">add</a> <a href="#" class="compare">compare</a>
+        </div>
+    </div>
+
 </div>
-<div class="bottom_prod_box_big"></div>
 
 {% endblock content %}
 

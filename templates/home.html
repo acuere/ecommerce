@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+     <div>
+    <form action="search" method="get">
+    <input type="text" name="search-text" placeholder="Seached text">
+    <input type="number" name="from-price" placeholder="Price from">
+    <input type="number" name="to-price" placeholder="Price to">
+    <input type="submit" class="btn btn-primary" role="button" value="Search">
+    </form>
+    </div>
    {% for product in product_list %}
             <div class="prod_box">
                 <div class="top_prod_box"></div>
