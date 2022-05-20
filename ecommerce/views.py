@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import TemplateView, DetailView, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import *
@@ -31,8 +31,19 @@ class ProductListView(TemplateView):
             from_price = int(url_dict.get('to-price'))
             q = q.filter(price__lte=from_price)
 
+        if 'search-type' in url_dict and url_dict['search-type']:
+            text = url_dict.get('search-type')
+            q = q.filter(Q(type__name__icontains=text))
+
         context = {'product_list': q}
         return context
+
+class CategoryView(ListView):
+    model = Product
+    template_name = 'home.html'
+    success_url = '/'
+    context_object_name = 'product_list'
+
 
 class ProductDetailView(DetailView):
     model = Product

@@ -6,3 +6,5 @@ from .models import *
 admin.site.register(Type)
 admin.site.register(Product)
 admin.site.register(ContactUs)
+# admin.site.register(Category)
+admin.site.register(PaymentType)

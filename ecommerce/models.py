@@ -15,9 +15,16 @@ class Product(models.Model):
     name = models.CharField(max_length=100, default='')
     price = models.DecimalField(max_digits=16, decimal_places=2, default=0)
     reduced = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE, blank=True)
     picture = models.ImageField(upload_to='images', default=True)
     garantie = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
+
+class PaymentType(models.Model):
+    name = models.CharField(max_length=100, default='')
 
     def __str__(self):
         return self.name
@@ -26,10 +33,18 @@ class Product(models.Model):
 class ContactUs(models.Model):
     title = models.CharField(max_length=100)
     fullname = models.CharField(max_length=100)
-    company = models.CharField(max_length=100,blank=True)
+    company = models.CharField(max_length=100, blank=True)
+    payment = models.ForeignKey(PaymentType, on_delete=models.CASCADE, default='')
     phone = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
     summary = models.TextField()
 
     def __str__(self):
         return self.title
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, default='')
+
+    def __str__(self):
+        return self.name
