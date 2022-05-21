@@ -9,6 +9,9 @@ psycopg2-binary = "*"
 pillow = "*"
 django-crispy-forms = "*"
 trans = "*"
+pip = "*"
+install = "*"
+djangorestframework = "*"
 
 [dev-packages]
 

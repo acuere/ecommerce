@@ -24,25 +24,25 @@ class Product(models.Model):
 
 
 class PaymentType(models.Model):
-    name = models.CharField(max_length=100, default='')
+    name = models.CharField(max_length=100,blank=True, null=True, default=0)
 
     def __str__(self):
         return self.name
 
 
 class ContactUs(models.Model):
-    title = models.CharField(max_length=100)
-    fullname = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='')
+    full_name = models.CharField(max_length=100)
     company = models.CharField(max_length=100, blank=True)
-    payment = models.ForeignKey(PaymentType, on_delete=models.CASCADE, default='')
+    payments = models.ForeignKey(PaymentType,on_delete=models.CASCADE, blank=True, null=True, default=0)
     phone = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
     summary = models.TextField()
 
     def __str__(self):
         return self.title
-
-
+ 
+#
 class Category(models.Model):
     name = models.CharField(max_length=100, default='')
 

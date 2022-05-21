@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # out apps
     'crispy_forms',
+    'rest_framework',
     # my apps
     'ecommerce',
+    'ecommerce_api_v0',
 ]
 
 

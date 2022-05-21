@@ -22,6 +22,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('ecommerce.urls')),
+    path('api/',include('ecommerce_api_v0.urls')),
 ]
 
 if settings.DEBUG:
