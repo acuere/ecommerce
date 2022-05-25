@@ -12,6 +12,7 @@ trans = "*"
 pip = "*"
 install = "*"
 djangorestframework = "*"
+django-extensions = "*"
 
 [dev-packages]
 

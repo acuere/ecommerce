@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # out apps
     'crispy_forms',
     'rest_framework',
+    'django_extensions',
     # my apps
     'ecommerce',
     'ecommerce_api_v0',

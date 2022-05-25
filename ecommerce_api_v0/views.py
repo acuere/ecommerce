@@ -7,6 +7,8 @@ from rest_framework import permissions
 
 
 # Create your views here.
+# from ..ecommerce.models import C
+
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
@@ -27,8 +29,12 @@ class ContactUsViewSet(viewsets.ModelViewSet):
 
 
 class CreateProductViewSet(generics.CreateAPIView):
+
     serializer_class = ProductSerializer
 
     def post(self, request, *args, **kwargs):
         print(request.data)
         return super().post(request, *args, **kwargs)
+
+
+
