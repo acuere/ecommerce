@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # out apps
+    'rest_framework_simplejwt',
     'crispy_forms',
     'rest_framework',
     'django_extensions',
@@ -54,7 +55,14 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
+REST_FRAMEWORK = {
 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

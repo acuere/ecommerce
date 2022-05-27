@@ -70,11 +70,11 @@ class ProductEditView(UpdateView):
 class ProductDeleteViewBlog(DeleteView):
     model = Product
     template_name = 'product_delete.html'
-    # success_url = '/'
+    success_url = reverse_lazy('home')
     context_object_name = 'form'
 
-    def get_success_url(self):
-        return reverse('detail', kwargs={'slug': self.object.slug})
+    # def get_success_url(self):
+    #     return reverse('detail', kwargs={'slug': self.object.slug})
 
 
 
